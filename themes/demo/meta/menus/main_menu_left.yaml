@@ -1,0 +1,39 @@
+name: Main_menu_left
+items:
+    -
+        title: Главная
+        nesting: '0'
+        type: static-page
+        code: ''
+        reference: index
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Узлы кормораздатчика'
+        nesting: '1'
+        type: static-page
+        url: ''
+        code: ''
+        reference: uzly-kormorazdatchika
+        cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: 'Экспертные статьи'
+        nesting: '1'
+        type: static-page
+        url: ''
+        code: ''
+        reference: ekspertnye-stati
+        cmsPage: ''
+        replace: '0'
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'

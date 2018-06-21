@@ -1,0 +1,63 @@
+//tools
+@import "_misc/mixins";
+@import "_misc/normalize";
+
+* {
+  @include box-sizing(border-box);
+
+}
+
+html, body {
+  min-height: 99%;
+  width: 100%;
+  line-height: 1.42;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+.main__header {
+  background: #333333;
+}
+
+.header_cont{
+  background: #FFA53E;
+  padding: 30px 0 0;
+
+}
+
+.brand__img{
+  width: 70%;
+
+  & img{
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+.page__title{
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.brand_block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.brand_slogan {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: white;
+  letter-spacing: 1px;
+}
+.brand__date {
+  font-size: 18px;
+  color: white;
+  letter-spacing: 1px;
+}

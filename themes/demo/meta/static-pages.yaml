@@ -1,0 +1,10 @@
+static-pages:
+    index: {  }
+    uzly-kormorazdatchika:
+        uzly-kormorazdatchika-uzel-1: {  }
+        uzly-kormorazdatchika-uzel-2: {  }
+        uzly-kormorazdatchika-uzel-3: {  }
+    ekspertnye-stati:
+        ekspertnye-stati-statya-1: {  }
+        ekspertnye-stati-statya-2: {  }
+        ekspertnye-stati-statya-3: {  }
