@@ -30,36 +30,32 @@ code = "contacts"
 </head>
 <body>
 
-    <header class="main__header">
-        <div class="container header_cont">
-            <div class="row">
-            {% if this.page.title == 'Главная' %}
-                <div class="col-md-4 brand_block">
-                    <h2 class="brand_slogan">ТОВ "Днепр"</h2>
-                    <p class="brand__date">основано в 1997 г.</p>
-                    <div class="brand__img">
-                        <img src="{{ 'assets/images/gear-wheel-icon.png'|theme }}" alt="" class="">
-                    </div>
+<header class="main__header">
+    <div class="container header_cont">
+        <div class="row">
+
+            <div class="col-md-4 brand_block">
+                <h2 class="brand_slogan">ТОВ "Днепр"</h2>
+
+                <div class="brand__img">
+                    <img src="{{ 'assets/images/gear-wheel-icon.png'|theme }}" alt="" class="">
                 </div>
-                <div class="col-md-8">
+                <a class="header__tel" href="tel:+380669043660">Тел: +38 (066) 904-36-60</a>
+                <a class="header__mail" href="mailto:info@dnipro.online24.net.ua">info@dnipro.online24.net.ua</a>
+            </div>
+            <div class="col-md-8">
+                {% if this.page.title == 'Главная' %}
                     <h1 class="page__title">Кормораздатчик</h1>
                     <div class="main__header-img">
                         <img src="" alt="" class="">
                     </div>
-                </div>
-            {% else %}
-                <div class="col-md-3">
-                    <h2 class="brand_slogan">ТОВ "Днепр"</h2>
-                    <img src="" alt="" class="brand__img">
-                    <p class="brand__date">Основано в 1997 г.</p>
-                </div>
-                <div class="col-md-9">
+                {% else %}
                     <h1 class="page__title">{{ this.page.title }}</h1>
-                </div>
-            {% endif %}
+                {% endif %}
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
 
 
