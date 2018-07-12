@@ -8,11 +8,17 @@
 }
 
 html, body {
-  min-height: 99%;
+  height: 100%;
   width: 100%;
   line-height: 1.42;
   font-family: 'Montserrat', sans-serif;
   background: #F2F2F2;
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .main__header {
@@ -26,7 +32,7 @@ html, body {
 }
 
 .brand__img{
-  width: 70%;
+  width: 40%;
 
   & img{
     width: 100%;
@@ -38,9 +44,9 @@ html, body {
 .page__title{
   color: white;
   text-align: center;
-  text-transform: uppercase;
   margin: 0;
   letter-spacing: 1px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .brand_block {
@@ -51,9 +57,10 @@ html, body {
 .brand_slogan {
   font-size: 32px;
   text-align: center;
-  font-weight: 600;
+  font-weight: 100;
   color: white;
   letter-spacing: 1px;
+  font-family: 'Raleway', sans-serif;
 }
 
 .brand__date {
@@ -65,9 +72,10 @@ html, body {
 .header__tel{
   font-size: 18px;
   color: white;
-  font-weight: 600;
+  font-weight: 100;
   letter-spacing: 1px;
   text-decoration: none !important;
+  font-family: 'Raleway', sans-serif;
   &:hover{
     color: white;
   }
@@ -77,7 +85,8 @@ html, body {
 .header__mail{
   font-size: 18px;
   color: white;
-  font-weight: 600;
+  font-weight: 100;
+  font-family: 'Raleway', sans-serif;
   margin-top: 7px;
   letter-spacing: 1px;
   text-decoration: none !important;
@@ -95,6 +104,7 @@ html, body {
 .main__cont{
   background: #F2F2F2;
   padding: 15px 0;
+  flex: 1;
 }
 
 .main_menu-title{
@@ -102,8 +112,8 @@ html, body {
   margin: 20px 0;
 }
 
-.main_menu-title > a{
-  text-transform: uppercase;
+.main_menu-item{
+
   background: linear-gradient( to bottom, rgba(243,243,243,1), rgba(231,231,231,1) );
   border-radius: 6px 6px 6px 6px;
   border-top: 1px solid rgb(199,199,199);
@@ -115,9 +125,11 @@ html, body {
   display: flex;
   padding: 10px 18px;
   color: black;
-  font-weight: 600;
+  font-weight: 100;
   font-size: 18px;
   letter-spacing: 1px;
+  text-decoration: none !important;
+  margin-top: 10px;
 
   &:hover{
     color: #FFA53E;
@@ -128,6 +140,35 @@ html, body {
   margin-top: 10px;
   font-size: 16px;
 
+}
+
+.main__menu-subtitle{
+  font-size: 16px;
+  margin-top: 15px;
+  font-weight: 700;
+  margin-left: 9%;
+  margin-bottom: 15px;
+}
+
+.main__aside ul{
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.category-child-menu-wrapper{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin: 0px 0 15px 0;
+
+  & li{
+    margin-bottom: 13px;
+  }
+
+  & li a{
+    font-size: 16px;
+    margin-left: 10%;
+  }
 }
 
 .main_menu-title > ul a{
@@ -148,3 +189,41 @@ html, body {
 .active > a, .active .main_menu-title ul li a {
   color: #FFA53E;
 }
+
+.product-list-wrapper{
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 30px;
+}
+
+.catalog__product-item {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-right: 1%;
+  padding: 15px 20px;
+  border: 1px solid #ffa53e;
+
+}
+.catalog__product-name {
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.catalog__product-img {
+  & img{
+    width: 100%;
+    height: auto;
+  }
+}
+.catalog__product-prewtext {
+  margin-top: 15px;
+}
+.catalog__product-price {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: 600;
+}
+

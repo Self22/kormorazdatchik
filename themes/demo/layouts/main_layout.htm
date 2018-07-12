@@ -5,13 +5,13 @@ default = 0
 [staticMenu main_page_item]
 code = "main_page_item"
 
-[blogCategories]
-slug = "{{ :slug }}"
-displayEmpty = 0
-categoryPage = "category"
-
 [staticMenu contacts_item]
 code = "contacts"
+
+[staticMenu specifications]
+code = "specifications"
+
+[CategoryList]
 ==
 <!DOCTYPE html>
 <html lang="ru">
@@ -19,17 +19,19 @@ code = "contacts"
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <meta name="description" content="{{ this.page.meta_description }}">
     <title>{{ this.page.meta_title }}</title>
-    <link href="/themes/demo/assets/css/bootstrap.min.css" rel="stylesheet">
+    {% styles %}
+    <link href="{{ 'assets/css/bootstrap.min.css'|theme }}" rel="stylesheet">
     <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
 
 
     {#<link href="/themes/demo/assets/css/style.css" rel="stylesheet">#}
 </head>
 <body>
-
+<div class="wrapper">
 <header class="main__header">
     <div class="container header_cont">
         <div class="row">
@@ -41,7 +43,7 @@ code = "contacts"
                     <img src="{{ 'assets/images/gear-wheel-icon.png'|theme }}" alt="" class="">
                 </div>
                 <a class="header__tel" href="tel:+380669043660">Тел: +38 (066) 904-36-60</a>
-                <a class="header__mail" href="mailto:info@dnipro.online24.net.ua">info@dnipro.online24.net.ua</a>
+                <a class="header__mail" href="mailto:dnipro@online24.net.ua">dnipro@online24.net.ua</a>
             </div>
             <div class="col-md-8">
                 {% if this.page.title == 'Главная' %}
@@ -49,8 +51,9 @@ code = "contacts"
                     <div class="main__header-img">
                         <img src="" alt="" class="">
                     </div>
-                {% else %}
-                    <h1 class="page__title">{{ this.page.title }}</h1>
+                {% elseif CategoryPage.get() %}
+                    {% set obCategory = CategoryPage.get() %}
+                    <h1 class="page__title">{{ obCategory.name }}</h1>
                 {% endif %}
             </div>
         </div>
@@ -61,10 +64,32 @@ code = "contacts"
 
         <main class="container main__cont">
             <div class="row">
-                <aside class="col-md-3">
-                    {% component 'main_page_item' %}
-                    {% component 'blogCategories' %}
-                    {% component 'contacts_item' %}
+                <aside class="main__aside col-md-3">
+                    <a class="main_menu-item" href="/">Главная</a>
+                    <a class="main_menu-item" href="/harakteristiki">Характеристики</a>
+                    <h4 class="main__menu-subtitle">Каталог запчастей:</h4>
+                    {# Get CategoryCollection class object. Call tree() method to get category tree #}
+
+                    {% set obCategoryList = CategoryList.make().tree() %}
+                    {% if obCategoryList.isNotEmpty() %}
+
+                            {% for obCategory in obCategoryList if obCategory.product_count > 0 %}
+
+                                    {% if obCategory.children.isNotEmpty() %}
+                                        <ul class="category-child-menu-wrapper">
+                                            {% for obChildCategory in obCategory.children if obChildCategory.product_count > 0 %}
+                                                <li><a href="/catalog/zapchasti/{{ obChildCategory.slug }}">{{ obChildCategory.name }}</a></li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+
+                            {% endfor %}
+
+                    {% endif %}
+
+
+                    <a class="main_menu-item" href="/contacts">Контакты</a>
+
                 </aside>
                 <div class="col-md-9">
                     {% page %}
@@ -78,9 +103,12 @@ code = "contacts"
             <p class="m-0 text-center">Copyright © Online24 - 2018</p>
         </div>
     </footer>
+</div>
 
     <!-- Scripts -->
-    <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
-    <script src="{{ 'assets/javascript/bootstrap.min.js'|theme }}"></script>
+    <script src="{{ ['assets/javascript/app.js',
+                    'assets/javascript/bootstrap.min.js']
+                    |theme }}"></script>
+    
 </body>
 </html>
