@@ -438,7 +438,7 @@ html, body {
 
 .header_cont {
   background: #FFA53E;
-  padding: 30px 0;
+  padding: 20px 0;
 }
 
 .brand__img {
@@ -454,8 +454,9 @@ html, body {
   color: white;
   text-align: center;
   margin: 0;
-  letter-spacing: 1px;
-  font-family: 'Raleway', sans-serif;
+  letter-spacing: 2px;
+  font-family: 'Roboto Ligth', sans-serif;
+  font-size: 28px;
 }
 
 .brand_block {
@@ -472,12 +473,12 @@ html, body {
 }
 
 .brand_slogan {
-  font-size: 32px;
+  font-size: 28px;
   text-align: center;
   font-weight: 100;
   color: white;
-  letter-spacing: 1px;
-  font-family: 'Raleway', sans-serif;
+  letter-spacing: 3px;
+  font-family: 'Roboto Light', sans-serif;
 }
 
 .brand__date {
@@ -492,7 +493,7 @@ html, body {
   font-weight: 100;
   letter-spacing: 1px;
   text-decoration: none !important;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .header__tel:hover {
@@ -503,7 +504,7 @@ html, body {
   font-size: 18px;
   color: white;
   font-weight: 100;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin-top: 7px;
   letter-spacing: 1px;
   text-decoration: none !important;
@@ -563,11 +564,21 @@ html, body {
 }
 
 .main__menu-subtitle {
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 15px;
   font-weight: 700;
   margin-left: 9%;
   margin-bottom: 15px;
+}
+
+.main__aside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .main__aside ul {
@@ -584,11 +595,11 @@ html, body {
 
 .category-child-menu-wrapper li {
   margin-bottom: 13px;
+  padding-left: 9%;
 }
 
 .category-child-menu-wrapper li a {
   font-size: 16px;
-  margin-left: 10%;
 }
 
 .main_menu-title > ul a {

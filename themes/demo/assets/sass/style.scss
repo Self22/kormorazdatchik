@@ -27,7 +27,7 @@ html, body {
 
 .header_cont{
   background: #FFA53E;
-  padding: 30px 0;
+  padding: 20px 0;
 
 }
 
@@ -45,8 +45,9 @@ html, body {
   color: white;
   text-align: center;
   margin: 0;
-  letter-spacing: 1px;
-  font-family: 'Raleway', sans-serif;
+  letter-spacing: 2px;
+  font-family: 'Roboto Ligth', sans-serif;
+  font-size: 28px;
 }
 
 .brand_block {
@@ -55,12 +56,12 @@ html, body {
   align-items: center;
 }
 .brand_slogan {
-  font-size: 32px;
+  font-size: 28px;
   text-align: center;
   font-weight: 100;
   color: white;
-  letter-spacing: 1px;
-  font-family: 'Raleway', sans-serif;
+  letter-spacing: 3px;
+  font-family: 'Roboto Light', sans-serif;
 }
 
 .brand__date {
@@ -75,7 +76,7 @@ html, body {
   font-weight: 100;
   letter-spacing: 1px;
   text-decoration: none !important;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
   &:hover{
     color: white;
   }
@@ -86,7 +87,7 @@ html, body {
   font-size: 18px;
   color: white;
   font-weight: 100;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin-top: 7px;
   letter-spacing: 1px;
   text-decoration: none !important;
@@ -143,11 +144,16 @@ html, body {
 }
 
 .main__menu-subtitle{
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 15px;
   font-weight: 700;
   margin-left: 9%;
   margin-bottom: 15px;
+}
+
+.main__aside{
+  display: flex;
+  flex-direction: column;
 }
 
 .main__aside ul{
@@ -163,11 +169,12 @@ html, body {
 
   & li{
     margin-bottom: 13px;
+    padding-left: 9%;
   }
 
   & li a{
     font-size: 16px;
-    margin-left: 10%;
+
   }
 }
 

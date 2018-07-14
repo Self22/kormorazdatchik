@@ -1,16 +1,3 @@
-[staticPage]
-useContent = 1
-default = 0
-
-[staticMenu main_page_item]
-code = "main_page_item"
-
-[staticMenu contacts_item]
-code = "contacts"
-
-[staticMenu specifications]
-code = "specifications"
-
 [CategoryList]
 ==
 <!DOCTYPE html>
@@ -21,8 +8,22 @@ code = "specifications"
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    {% if CategoryPage.get() %}
+    {% set obCategory = CategoryPage.get() %}
+    <meta name="description" content="{{ obCategory.description }} в оригинале от производителя | Запчасти для кормораздатчика КТУ 10А | Купить, заказать | Официальная гарантия | Отправка по всей Украине (Новая почта, Интайм)">
+    <title>{{ obCategory.name }} | Запчасти для кормораздатчика | ТОВ "Дніпро", г. Орехов</title>
+    {% elseif ProductPage.get() %}
+        {% set obProduct = ProductPage.get() %}
+        <meta name="description" content="Каталог запчастей кормораздатчика КТУ 10А : {{ obProduct.preview_text }} | Купить другие запчасти для кормораздатчика | Скидки для постоянных клиентов | Отправка по всей Украине">
+        <title>{{ obProduct.name }} | Купить запчасть для КТУ-10 | Заказать от официального производителя (г. Орехов, Запорожская область)</title>
+    {% else %}
     <meta name="description" content="{{ this.page.meta_description }}">
-    <title>{{ this.page.meta_title }}</title>
+    <title>{{ this.page.meta_title|raw  }}</title>
+    {% endif %}
+
+
+
     {% styles %}
     <link href="{{ 'assets/css/bootstrap.min.css'|theme }}" rel="stylesheet">
     <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
@@ -37,7 +38,7 @@ code = "specifications"
         <div class="row">
 
             <div class="col-md-4 brand_block">
-                <h2 class="brand_slogan">ТОВ "Днепр"</h2>
+                <h2 class="brand_slogan">ТОВ "Дніпро"</h2>
 
                 <div class="brand__img">
                     <img src="{{ 'assets/images/gear-wheel-icon.png'|theme }}" alt="" class="">
@@ -64,7 +65,9 @@ code = "specifications"
 
         <main class="container main__cont">
             <div class="row">
-                <aside class="main__aside col-md-3">
+                <nav class="main__aside col-md-3">
+                                        
+                    
                     <a class="main_menu-item" href="/">Главная</a>
                     <a class="main_menu-item" href="/harakteristiki">Характеристики</a>
                     <h4 class="main__menu-subtitle">Каталог запчастей:</h4>
@@ -87,10 +90,10 @@ code = "specifications"
 
                     {% endif %}
 
-
                     <a class="main_menu-item" href="/contacts">Контакты</a>
+                   
 
-                </aside>
+                </nav>
                 <div class="col-md-9">
                     {% page %}
                 </div>
