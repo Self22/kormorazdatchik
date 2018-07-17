@@ -442,7 +442,7 @@ html, body {
 }
 
 .brand__img {
-  width: 40%;
+  width: 30%;
 }
 
 .brand__img img {
@@ -566,9 +566,10 @@ html, body {
 .main__menu-subtitle {
   font-size: 18px;
   margin-top: 15px;
-  font-weight: 700;
+  font-weight: 100;
   margin-left: 9%;
   margin-bottom: 15px;
+  letter-spacing: 1px;
 }
 
 .main__aside {
@@ -614,7 +615,7 @@ html, body {
 
 .main__content {
   font-size: 16px;
-  padding: 30px;
+  padding: 10px 5% 4%;
 }
 
 .active > a, .active .main_menu-title ul li a {
